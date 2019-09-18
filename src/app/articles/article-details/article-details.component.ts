@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-article-details',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./article-details.component.scss']
 })
 export class ArticleDetailsComponent implements OnInit {
+  id: any;
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.id = this.activatedRoute.snapshot.params.id;
+  }
 
   ngOnInit() {
   }
